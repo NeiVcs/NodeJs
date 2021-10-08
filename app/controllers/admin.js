@@ -26,3 +26,12 @@ module.exports.noticias_salvar = function(application, req, res){
         res.redirect('/home');
     });
 }
+module.exports.noticias_deletar = function(application, req, res){
+    var noticia = req.body
+    var connection = application.config.dbconnection();
+    var noticiasModel = new application.app.models.NoticiasDAO(connection);
+
+    noticiasModel.removerNoticia(noticia, function(error, result){
+        res.redirect('/noticias');
+    });
+}

@@ -57,6 +57,10 @@
                                 <p class="noticia_resumo">
                                     <%= noticias[i].noticia %>
                                 </p>
+								<form action="/noticias/deletar" method="POST">
+									<input type="hidden" name="id_noticia" value=<%= noticias[i].id_noticia %>></input>
+									<button type="submit" class="btn btn-default">Apagar notícia</button>
+								</form>
                             </div>
                         </div>
                     </div>
